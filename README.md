@@ -23,7 +23,6 @@ A modern web application for searching and renting campers with a wide selection
 - **React Toastify** - beautiful user notifications
 - **Vite** - fast build tool with hot reload
 - **PropTypes** - component props validation
-- **Yet Another React Lightbox** - elegant image gallery viewer
 
 ## 📦 Installation and Setup
 
