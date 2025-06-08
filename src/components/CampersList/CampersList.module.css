@@ -1,0 +1,30 @@
+.campersList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.item {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.empty {
+  text-align: center;
+  padding: var(--spacing-3xl);
+  color: var(--color-text-secondary);
+  font-size: 1.125rem;
+  background-color: var(--color-white);
+  border-radius: var(--radius-sm);
+}
+
+.loadMore {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-xl);
+}

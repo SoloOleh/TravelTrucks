@@ -1,0 +1,65 @@
+.equipmentFilter {
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 24px;
+}
+
+.divider {
+  height: 1px;
+  background-color: rgba(16, 24, 40, 0.1);
+  margin-bottom: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px 0;
+  min-height: 95px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: var(--color-text);
+}
+
+.option:hover {
+  border-color: var(--color-main);
+}
+
+.option.active {
+  border-color: var(--color-main);
+}
+
+.option svg {
+  width: 32px;
+  height: 32px;
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+}
+
+.option.active svg {
+  color: var(--color-main);
+}
+
+.option span {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--color-text);
+}

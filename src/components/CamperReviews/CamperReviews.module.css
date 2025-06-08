@@ -1,0 +1,35 @@
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 631px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.empty {
+  text-align: center;
+  padding: 48px;
+  color: var(--color-text-secondary);
+  font-size: 18px;
+  background-color: var(--color-inputs);
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .reviews {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .empty {
+    padding: 32px 24px;
+    font-size: 16px;
+  }
+}

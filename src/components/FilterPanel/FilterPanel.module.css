@@ -1,0 +1,33 @@
+.filterPanel {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.filterPanel > button {
+  margin-top: 8px;
+}
+
+@media (max-width: 1199px) {
+  .filterPanel {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .filterPanel > button {
+    margin-top: 8px;
+    align-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .filterPanel {
+    width: 100%;
+    max-width: 100%;
+    gap: 24px;
+  }
+}

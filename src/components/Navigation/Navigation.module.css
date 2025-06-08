@@ -1,0 +1,31 @@
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.link {
+  color: var(--color-text);
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 0;
+  border-radius: 0;
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.link:hover {
+  color: var(--color-button);
+}
+
+.link.active {
+  color: var(--color-button);
+}
+
+.link.active::after {
+  display: none;
+}

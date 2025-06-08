@@ -1,0 +1,131 @@
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 100%;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.tabs {
+  display: flex;
+  gap: 40px;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.2);
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+.tab {
+  padding: 24px 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--color-text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.tab:hover {
+  color: var(--color-main);
+}
+
+.tab.active {
+  color: var(--color-text);
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: var(--color-main);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 631px 641px; /* Фіксовані розміри як на макеті */
+  gap: 40px;
+  margin-top: 44px;
+  width: 100%;
+  max-width: 1312px;
+  justify-content: start; /* Вирівнюємо по лівому краю */
+}
+
+.tabContent {
+  padding: 0;
+  width: 631px; /* Фіксована ширина */
+  overflow: visible; /* Дозволяємо контенту бути видимим */
+}
+
+.sidebar {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  width: 641px; /* Фіксована ширина */
+}
+
+@media (max-width: 1440px) {
+  .content {
+    grid-template-columns: 1fr auto;
+    max-width: 100%;
+  }
+
+  .tabContent {
+    width: 100%;
+    max-width: 631px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    max-width: 641px;
+    margin: 0 auto;
+  }
+
+  .tabContent {
+    width: 100%;
+    max-width: 631px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabs {
+    gap: 24px;
+  }
+
+  .tab {
+    font-size: 18px;
+    padding: 16px 0;
+  }
+
+  .content {
+    margin-top: 24px;
+    gap: 24px;
+  }
+
+  .tabContent {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}

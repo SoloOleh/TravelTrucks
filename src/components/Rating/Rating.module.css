@@ -1,0 +1,30 @@
+.rating {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.star {
+  color: var(--color-rating);
+}
+
+.text {
+  font-size: 1rem;
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+}
+
+.text.clickable {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.text.clickable:hover {
+  color: var(--color-main);
+}

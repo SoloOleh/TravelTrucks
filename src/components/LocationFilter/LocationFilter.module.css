@@ -1,0 +1,55 @@
+.locationFilter {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text);
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  padding: 18px;
+  padding-left: 48px;
+  background-color: var(--color-inputs);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 16px;
+  color: var(--color-text);
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.input::placeholder {
+  color: rgba(16, 24, 40, 0.6);
+}
+
+.input:hover {
+  border-color: var(--color-main);
+}
+
+.input:focus {
+  background-color: var(--color-white);
+  border-color: var(--color-main);
+}
+
+.input:not(:placeholder-shown) {
+  background-color: var(--color-white);
+  border-color: var(--color-main);
+}
