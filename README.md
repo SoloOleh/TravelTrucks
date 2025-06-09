@@ -15,9 +15,9 @@ A modern web application for searching and renting campers with a wide selection
 
 ## 🛠 Technologies
 
-- **React 18** - UI library with modern hooks
+- **React** - UI library with modern hooks
 - **Redux Toolkit** - modern state management solution
-- **React Router v6** - routing with nested routes support
+- **React Router** - routing with nested routes support
 - **Axios** - HTTP client for API requests
 - **CSS Modules** - scoped styling for components
 - **React Toastify** - beautiful user notifications
