@@ -26,7 +26,7 @@ const filtersSlice = createSlice({
       const equipment = action.payload;
       state.equipment[equipment] = !state.equipment[equipment];
     },
-    resetFilters: (state) => {
+    resetFilters: () => {
       return initialState;
     },
   },

@@ -9,8 +9,8 @@ const EquipmentFilter = () => {
   const dispatch = useDispatch();
   const equipment = useSelector(selectEquipment);
 
-  const handleToggle = (value) => {
-    dispatch(toggleEquipment(value));
+  const handleEquipmentToggle = (equipmentType) => {
+    dispatch(toggleEquipment(equipmentType));
   };
 
   return (
@@ -22,7 +22,7 @@ const EquipmentFilter = () => {
           <button
             key={value}
             type="button"
-            onClick={() => handleToggle(value)}
+            onClick={() => handleEquipmentToggle(value)}
             className={`${styles.option} ${
               equipment[value] ? styles.active : ""
             }`}

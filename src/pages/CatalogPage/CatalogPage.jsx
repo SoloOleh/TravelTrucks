@@ -9,30 +9,35 @@ import styles from "./CatalogPage.module.css";
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
-  const activeFilters = useSelector(selectActiveFilters);
-  const isFirstRender = useRef(true);
+  const currentActiveFilters = useSelector(selectActiveFilters);
+  const isFirstPageLoad = useRef(true);
 
   useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
+    if (isFirstPageLoad.current) {
+      isFirstPageLoad.current = false;
 
-      if (Object.keys(activeFilters).length > 0) {
-        dispatch(resetCampers());
-        dispatch(fetchCampers({ page: 1, filters: activeFilters }));
-      } else {
-        dispatch(resetCampers());
-        dispatch(fetchCampers({ page: 1, filters: {} }));
-      }
+      const hasActiveFilters = Object.keys(currentActiveFilters).length > 0;
+
+      dispatch(resetCampers());
+
+      const filtersToApply = hasActiveFilters ? currentActiveFilters : {};
+      dispatch(fetchCampers({ page: 1, filters: filtersToApply }));
     }
   }, []);
 
-  const handleApplyFilters = (filters) => {
+  const handleApplyFiltersAndSearch = (selectedFilters) => {
     dispatch(resetCampers());
-    dispatch(fetchCampers({ page: 1, filters }));
+    dispatch(fetchCampers({ page: 1, filters: selectedFilters }));
   };
 
-  const handleLoadMore = (page) => {
-    dispatch(fetchCampers({ page, filters: activeFilters, append: true }));
+  const handleLoadMoreCampers = (nextPageNumber) => {
+    dispatch(
+      fetchCampers({
+        page: nextPageNumber,
+        filters: currentActiveFilters,
+        append: true,
+      })
+    );
   };
 
   return (
@@ -40,10 +45,10 @@ const CatalogPage = () => {
       <div className="container">
         <div className={styles.content}>
           <aside className={styles.sidebar}>
-            <FilterPanel onApplyFilters={handleApplyFilters} />
+            <FilterPanel onApplyFilters={handleApplyFiltersAndSearch} />
           </aside>
           <main className={styles.main}>
-            <CampersList onLoadMore={handleLoadMore} />
+            <CampersList onLoadMore={handleLoadMoreCampers} />
           </main>
         </div>
       </div>

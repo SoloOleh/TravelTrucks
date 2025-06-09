@@ -9,8 +9,8 @@ const VehicleTypeFilter = () => {
   const dispatch = useDispatch();
   const selectedForm = useSelector(selectForm);
 
-  const handleSelect = (value) => {
-    dispatch(setForm(value === selectedForm ? "" : value));
+  const handleVehicleTypeSelect = (vehicleType) => {
+    dispatch(setForm(vehicleType === selectedForm ? "" : vehicleType));
   };
 
   return (
@@ -22,7 +22,7 @@ const VehicleTypeFilter = () => {
           <button
             key={value}
             type="button"
-            onClick={() => handleSelect(value)}
+            onClick={() => handleVehicleTypeSelect(value)}
             className={`${styles.option} ${
               selectedForm === value ? styles.active : ""
             }`}

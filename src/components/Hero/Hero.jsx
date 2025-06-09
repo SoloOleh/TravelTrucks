@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import Button from "../Button/Button";
 import styles from "./Hero.module.css";
 
-const Hero = ({ onViewNow }) => {
+const Hero = ({ onViewCatalogClick }) => {
   return (
     <section className={styles.hero}>
       <div className={styles.container}>
@@ -11,7 +11,7 @@ const Hero = ({ onViewNow }) => {
           <p className={styles.subtitle}>
             You can find everything you want in our catalog
           </p>
-          <Button onClick={onViewNow} size="large">
+          <Button onClick={onViewCatalogClick} size="large">
             View Now
           </Button>
         </div>
@@ -21,7 +21,7 @@ const Hero = ({ onViewNow }) => {
 };
 
 Hero.propTypes = {
-  onViewNow: PropTypes.func.isRequired,
+  onViewCatalogClick: PropTypes.func.isRequired,
 };
 
 export default Hero;

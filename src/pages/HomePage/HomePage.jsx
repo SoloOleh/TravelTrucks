@@ -6,13 +6,13 @@ import styles from "./HomePage.module.css";
 const HomePage = () => {
   const navigate = useNavigate();
 
-  const handleViewNow = () => {
+  const handleNavigateToCatalog = () => {
     navigate(ROUTES.CATALOG);
   };
 
   return (
     <div className={styles.homePage}>
-      <Hero onViewNow={handleViewNow} />
+      <Hero onViewCatalogClick={handleNavigateToCatalog} />
     </div>
   );
 };

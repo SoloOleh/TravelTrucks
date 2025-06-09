@@ -10,7 +10,7 @@ import styles from "./FilterPanel.module.css";
 const FilterPanel = ({ onApplyFilters }) => {
   const filters = useSelector(selectActiveFilters);
 
-  const handleSearch = () => {
+  const handleSearchButtonClick = () => {
     onApplyFilters(filters);
   };
 
@@ -20,7 +20,7 @@ const FilterPanel = ({ onApplyFilters }) => {
       <EquipmentFilter />
       <VehicleTypeFilter />
 
-      <Button onClick={handleSearch} variant="primary" size="large">
+      <Button onClick={handleSearchButtonClick} variant="primary" size="large">
         Search
       </Button>
     </aside>

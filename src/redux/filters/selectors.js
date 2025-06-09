@@ -2,32 +2,34 @@ import { createSelector } from "@reduxjs/toolkit";
 
 export const selectFilters = (state) => state.filters;
 
-export const selectLocation = createSelector(
-  [selectFilters],
-  (filters) => filters.location
-);
+export const selectLocation = (state) => state.filters.location;
 
-export const selectForm = createSelector(
-  [selectFilters],
-  (filters) => filters.form
-);
+export const selectForm = (state) => state.filters.form;
 
-export const selectEquipment = createSelector(
-  [selectFilters],
-  (filters) => filters.equipment
-);
+export const selectEquipment = (state) => state.filters.equipment;
 
 export const selectActiveFilters = createSelector(
   [selectLocation, selectForm, selectEquipment],
   (location, form, equipment) => {
-    const activeEquipment = Object.entries(equipment)
-      .filter(([_, value]) => value)
-      .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {});
+    const activeEquipment = {};
+    Object.entries(equipment).forEach(([key, value]) => {
+      if (value === true) {
+        activeEquipment[key] = true;
+      }
+    });
 
-    return {
-      ...(location && { location }),
-      ...(form && { form }),
-      ...activeEquipment,
-    };
+    const activeFilters = {};
+
+    if (location) {
+      activeFilters.location = location;
+    }
+
+    if (form) {
+      activeFilters.form = form;
+    }
+
+    Object.assign(activeFilters, activeEquipment);
+
+    return activeFilters;
   }
 );

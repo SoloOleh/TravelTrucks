@@ -20,7 +20,7 @@ const CampersList = ({ onLoadMore }) => {
   const hasMore = useSelector(selectHasMoreCampers);
   const currentPage = useSelector(selectCampersPage);
 
-  const handleLoadMore = () => {
+  const handleLoadMoreButtonClick = () => {
     dispatch(incrementPage());
     onLoadMore(currentPage + 1);
   };
@@ -50,7 +50,7 @@ const CampersList = ({ onLoadMore }) => {
       {hasMore && (
         <div className={styles.loadMore}>
           <Button
-            onClick={handleLoadMore}
+            onClick={handleLoadMoreButtonClick}
             variant="outline"
             size="large"
             disabled={isLoading}
